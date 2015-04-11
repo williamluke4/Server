@@ -99,7 +99,7 @@ function sendMessage(message, socket, elementID, webState){
                     }
                     
                     else if(stdout.indexOf("NO REPLY") > -1) {
-                        console.log('NO REPLY');
+                        console.log('NO REPLY' + elementID + ' ' + webState);
                     
                         socket.emit(
                             "failed", 
