@@ -115,8 +115,10 @@ function sendMessage(message, socket, elementID, webState){
                     
                         socket.emit(
                             "callbackError", 
-                            { 
-                                error: error 
+                            {
+                                webstate: webState,
+                                error: error,
+                                switchID: elementID
 
                             });
                     

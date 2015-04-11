@@ -24,7 +24,7 @@ window.onload = function () {
 		socket.emit('send', {
 			webstate: state,
 			message: checkaction,
-			switchID: dataID
+			switchID: elementID
 		});
 		console.log("Sent Checking Command: " + checkaction);
 	}
@@ -56,13 +56,21 @@ window.onload = function () {
 		});
 
 
-		//On Sending Error
-		socket.on("callbackError", function (data) {
-			console.log(data.error);
 
-		});
 	});
+	//On Sending Error
+	socket.on("callbackError", function (data) {
+		console.log(data.error);
+		$(data.switchID).siblings('div').children('.toggle-on').css("background-color", "red");
+		$(data.switchID).siblings('div').children('.toggle-off').css("background-color", "red");
+		console.log("NO REPLY: " + data.switchID);
+		if (data.webstate) {
+			$(data.switchID).bootstrapToggle("on");
+		} else {
+			$(data.switchID).bootstrapToggle("off");
+		}
 
+	});
 
 	 //Message Recived
 	socket.on("callbackButton", function (data) {
@@ -91,7 +99,7 @@ window.onload = function () {
     $('.refresh').on('click', function () {
         var switches = $('.switches').find('input');
         switches.each(function () {
-            var switchid = '#' + $(this).attr('id');
+            var switchid = '#' + $(this).prop('id');
             checkState(switchid);
         });
     })
