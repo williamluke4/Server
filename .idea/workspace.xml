@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a264adf0-e5d2-403b-b746-2d019d8373a9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascript/remoteClient.js" afterPath="$PROJECT_DIR$/public/javascript/remoteClient.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ServerRebuild2.iws" />
@@ -88,8 +87,8 @@
       <file leaf-file-name="remoteClient.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascript/remoteClient.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61406845">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.581749">
+              <caret line="115" column="28" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -445,7 +444,13 @@
       <option name="project" value="LOCAL" />
       <updated>1428790659734</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Switch Error Handling">
+      <created>1428791504812</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1428791504812</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -489,7 +494,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Problem with remoteClient fixed" />
     <MESSAGE value="Minor Tweaking" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor Tweaking" />
+    <MESSAGE value="Switch Error Handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switch Error Handling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -882,8 +888,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascript/remoteClient.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61406845">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.581749">
+          <caret line="115" column="28" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="28" />
           <folding />
         </state>
       </provider>

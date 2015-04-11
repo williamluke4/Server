@@ -113,9 +113,7 @@ window.onload = function () {
     $('.custombtn').on('click', function () {
         var command = prompt("Command", "");
         socket.emit('send', {
-            webstate: state,
-            message: checkaction,
-            switchID: switchid
+            message: command
         });
         console.log("Sending Custom Command: " + command)
 
