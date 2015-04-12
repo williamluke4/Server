@@ -1,4 +1,4 @@
-
+//TODO Clean Up Code and Split Up in to different files
 window.onload = function () {
 	var messages = [];
 	//onload this function will initialize a connection and privide communication between server and client
