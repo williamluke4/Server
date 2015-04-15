@@ -4,7 +4,17 @@
  */
 
 var mongoose = require( 'mongoose' );
+var busTimes = mongoose.model( 'bustimes' );
 var Switch = mongoose.model( 'switches' );
+
+/*var kingsA = [],
+    kingsD = [],
+    centralA =[]
+busTimes.find({location:'kingsA'}, function ( err, bustimes, count ){
+    var kingsA = bustimes
+
+});*/
+
 
 exports.index = function ( req, res ){
     Switch.find( function ( err, switches, count ){
@@ -25,7 +35,7 @@ exports.create = function ( req, res ){
         dataID  : req.body.dataID,
         group  : req.body.group
     }).save( function( err, comment, count ){
-            res.redirect( '/' );
+            res.redirect( '/remote' );
         });
 };
 

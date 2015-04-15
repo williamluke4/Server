@@ -111,13 +111,22 @@ window.onload = function () {
     })
     //Send Custom Command
     $('.custombtn').on('click', function () {
-        var command = prompt("Command", "");
-        socket.emit('send', {
+		$('#custom').slideToggle("slow");
+        /*socket.emit('send', {
             message: command
         });
-        console.log("Sending Custom Command: " + command)
+        console.log("Sending Custom Command: " + command)*/
 
     })
+	$('#submitCustom').on('click', function () {
+		command = $('#customCode').val();
+		$('#custom').slideToggle("slow");
+		socket.emit('send', {
+		 	message: command
+		});
+		console.log("Sending Custom Command: " + command)
+
+	})
 
 };
 

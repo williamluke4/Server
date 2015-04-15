@@ -30,12 +30,12 @@ nav * {
 	/* margin-bottom: 4px; */
 	height: 24px;
 }
-.digits .well {
+/*.digits .well {
 	text-align: center;
 	cursor: pointer;
 	font-weight: bold;
 	font-size: 2em;
-}
+}*/
 .result {
 
 	text-align: right;
@@ -72,4 +72,11 @@ button#menu1 {
 	padding: 0px;
 	border-radius: 0px;
 	border: none;
+}
+#custom {
+	position: fixed;
+	top: 53px;
+	background-color: white;
+	height:100%;
+	display: none;
 }
