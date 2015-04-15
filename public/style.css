@@ -2,7 +2,9 @@
 body {
 	background-image: url("images/background.jpg");
 }
-
+.navbar {
+	width: 100%;
+}
 
 .pages{
 	position: absolute;
