@@ -74,31 +74,35 @@ app.get('/remote', routes.remote);
 app.get('/switches', routes.switches);
 app.post( '/create', routes.create );
 app.post('/delete',routes.delete);
+app.post('/8315',function(req,res){
+    console.log("Sending The Message")
+    sendMessage(8315,false,false,false,false)
+});
 app.use(express.static('public/'));
 
-function sendMessage(message, socket, elementID, webState){
+function sendMessage(message, socket, elementID, webState,callback){
     exec.execFile('../remote',
                 ['-m', message],
                 function (error, stdout, stderr) {
                     console.log("The message is: " + message);
                     console.log('stdout: ' + stdout);
                     console.log('stderr: ' + stderr);
-                    if( stdout.indexOf("RECIVED:") > -1 ){
+                    if( stdout.indexOf("RECIVED:") > -1 && callback == true){
                         var state = stdout.split('RECIVED: ')[1].split('.')[0];
                         console.log("Sending Message Back To Client");
                         socket.emit(
-                            "callbackButton", 
-                            { 
+                            "callbackButton",
+                            {
                                 webstate: webState,
-                                message: "received", 
+                                message: "received",
                                 operation: message,
                                 state: state,
                                 switchID: elementID
 
                             });
                     }
-                    
-                    else if(stdout.indexOf("NO REPLY") > -1) {
+
+                    else if(stdout.indexOf("NO REPLY") > -1 && callback == true) {
                         console.log('NO REPLY' + elementID + ' ' + webState);
                     
                         socket.emit(
@@ -110,8 +114,8 @@ function sendMessage(message, socket, elementID, webState){
                     
                     }
 
-                    if (error !== null) {
-                        console.log('exec error: ' + error);
+                    if (error !== null && callback == true) {
+                        console.log('exec error: ' + error );
                     
                         socket.emit(
                             "callbackError", 
@@ -137,7 +141,7 @@ var io = socket.listen(app.listen(port));
 io.sockets.on('connection', function (socket) {
     socket.on('send', function (data) {
 
-        sendMessage(data.message, socket, data.switchID, data.webstate);
+        sendMessage(data.message, socket, data.switchID, data.webstate, true);
 
     });
 });
