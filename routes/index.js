@@ -41,7 +41,7 @@ exports.create = function ( req, res ){
 
 exports.delete = function ( req, res ){
     Switch.remove({elementID:req.body.elementID}, function( err, comment, count ){
-        res.redirect( '/' );
+        res.redirect( '/switches' );
     });
     console.log();
     console.log("Deleted: " + req.body.elementID);
